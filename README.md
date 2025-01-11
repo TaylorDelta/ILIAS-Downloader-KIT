@@ -1,58 +1,73 @@
-# Web Scraper with Selenium and Tkinter
+# Automated ILIAS Downloader
 
-This project is a Python-based web scraper that automates the process of logging into a website, selecting courses, and downloading related files. The script uses Selenium for web automation, Tkinter for a graphical user interface (GUI) to select files, and processes ZIP files by extracting them after downloading.
+This project is a Python-based web scraper that automates the process of logging into the ILIAS learning platform, selecting courses, and downloading all available course files, data, and PDFs. The script uses Selenium with Edge WebDriver for web automation and Tkinter for a simple graphical user interface (GUI) to select courses. ZIP files are downloaded, extracted, and cleaned up automatically.
 
 ## Features
 
-- Logs into a website using provided credentials.
-- Navigates through the available courses and displays them in a Tkinter-based GUI.
-- Allows the user to select which courses to download.
-- Downloads files and extracts any ZIP archives.
-- Automatically deletes ZIP files after extraction to keep the download folder clean.
-- Supports Microsoft Edge WebDriver for browser automation.
+- Logs into the ILIAS learning platform using provided credentials.
+- Allows users to select courses to download using a Tkinter-based GUI.
+- Downloads all available course files, including PDFs and data.
+- Extracts ZIP archives and removes them after extraction.
+- Uses Microsoft Edge WebDriver for browser automation.
+- Provides a customizable download folder for saving files.
 
 ## Requirements
 
 To run this script, you need the following:
 
 - Python 3.x
-- Selenium (install via pip)
-- Tkinter (usually comes with Python)
-- Microsoft Edge WebDriver (Ensure the version matches your Edge browser)
+- Selenium library (install via pip)
+- Tkinter library (usually bundled with Python)
+- Microsoft Edge WebDriver (ensure the version matches your Edge browser)
+
+You can install Selenium using pip:
+pip install selenium
+
+Make sure to download the appropriate version of **Microsoft Edge WebDriver** that matches the version of Microsoft Edge you are using. You can get it from [here](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/).
 
 ## Setup
 
-1. Install Python 3.x if you haven’t already.
-2. Install Selenium via pip: `pip install selenium`
-3. Download Microsoft Edge WebDriver and make sure the version matches your Microsoft Edge browser version.
+1. Install Python 3.x if you haven't already.
+2. Install Selenium by running `pip install selenium` in your terminal.
+3. Download Microsoft Edge WebDriver and ensure the version matches your Edge browser version.
+4. Update the script with the following information:
+   - `username`: Your ILIAS login username.
+   - `password`: Your ILIAS login password.
+   - `login_url`: The URL of your institution's ILIAS login page.
+   - `download_folder`: The folder path where the files will be saved.
 
 ## Usage
 
-1. Update the script with your details:
-   - `username`: Your login username.
-   - `password`: Your login password.
-   - `download_folder`: The folder where you want the files to be downloaded.
-   - `login_url`: The URL for the login page of your website.
+1. Update the script with your ILIAS credentials and login URL:
+   - Set the `username`, `password`, `login_url`, and `download_folder` variables in the script.
    
-2. Run the script. The Tkinter window will appear with checkboxes for each course available.
+2. Run the script:
+   - The Tkinter window will appear displaying a list of courses available for download. Each course will be listed with a checkbox.
 
-3. Select the courses you want to download and click "Done" to initiate the download process.
+3. Select the courses you want to download and click the "Done" button to begin the download process.
 
-4. The script will automatically:
-   - Log into the website using Selenium.
-   - Navigate through the course list.
-   - Download the selected course files.
-   - Extract ZIP files and delete them after extraction.
+4. The script will:
+   - Log into ILIAS using Selenium and the provided credentials.
+   - Fetch the list of available courses and display them in the Tkinter GUI.
+   - Download the selected course files, including PDFs, ZIPs, and other data files.
+   - Extract ZIP files automatically and delete them after extraction to keep the download folder clean.
 
 ## How it Works
 
-- **Login and Course Selection**: The script uses Selenium to open the login page, fills in the credentials, and logs in. Once logged in, it fetches the list of courses and displays them in a Tkinter window with checkboxes.
-  
-- **File Download and Extraction**: After the user selects the courses to download and clicks "Done", the script downloads the files and checks if any ZIP files need to be extracted. It extracts them and deletes the ZIP file after extraction.
+- **Login and Course Selection**: 
+  - The script uses Selenium to automate the login process to the ILIAS platform. Once logged in, it retrieves the list of courses available to the user.
+  - The courses are displayed in a Tkinter-based GUI with checkboxes, allowing the user to select which courses they want to download.
 
-- **Download Completeness**: The script periodically checks for `.crdownload` files in the download folder to ensure the download has finished before moving to the next action.
+- **File Download and Extraction**:
+  - After the user selects the desired courses and clicks "Done," the script initiates the download process. It interacts with the ILIAS platform to trigger the download of course files.
+  - If ZIP files are downloaded, they are extracted automatically into the specified folder.
+  - The script deletes the original ZIP files after extraction to maintain a clean download directory.
 
-- **Clean-up**: The script automatically closes the browser when the download and extraction process is completed.
+- **Download Completeness**:
+  - The script checks periodically for `.crdownload` files (temporary download files) in the download folder to ensure that the download process is complete before proceeding.
+
+- **Browser Automation**:
+  - The script uses Microsoft Edge WebDriver to automate browser actions, making it necessary to have Edge installed and the correct version of WebDriver downloaded.
 
 ## License
 
