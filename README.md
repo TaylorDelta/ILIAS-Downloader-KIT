@@ -1,44 +1,59 @@
 # Web Scraper with Selenium and Tkinter
 
-This project is a Python-based web scraper that utilizes the `selenium` library for web automation, `tkinter` for a simple graphical user interface (GUI), and the Microsoft Edge WebDriver. The script is designed to automate web interactions, such as downloading files or extracting content, based on user input through a Tkinter interface.
+This project is a Python-based web scraper that automates the process of logging into a website, selecting courses, and downloading related files. The script uses Selenium for web automation, Tkinter for a graphical user interface (GUI) to select files, and processes ZIP files by extracting them after downloading.
+
+## Features
+
+- Logs into a website using provided credentials.
+- Navigates through the available courses and displays them in a Tkinter-based GUI.
+- Allows the user to select which courses to download.
+- Downloads files and extracts any ZIP archives.
+- Automatically deletes ZIP files after extraction to keep the download folder clean.
+- Supports Microsoft Edge WebDriver for browser automation.
 
 ## Requirements
 
-Before running the script, ensure that you have the following:
+To run this script, you need the following:
 
 - Python 3.x
-- `selenium` library
-- `tkinter` library (typically bundled with Python)
-- Microsoft Edge WebDriver
+- Selenium (install via pip)
+- Tkinter (usually comes with Python)
+- Microsoft Edge WebDriver (Ensure the version matches your Edge browser)
 
-You can install the necessary Python libraries using the following pip command:
+## Setup
 
-`pip install selenium`
+1. Install Python 3.x if you haven’t already.
+2. Install Selenium via pip: `pip install selenium`
+3. Download Microsoft Edge WebDriver and make sure the version matches your Microsoft Edge browser version.
 
-Ensure that you have the correct version of the Microsoft Edge WebDriver installed, which matches the version of Microsoft Edge on your system. You can download it from the official Microsoft Edge WebDriver site.
+## Usage
 
-## How to Use
+1. Update the script with your details:
+   - `username`: Your login username.
+   - `password`: Your login password.
+   - `download_folder`: The folder where you want the files to be downloaded.
+   - `login_url`: The URL for the login page of your website.
+   
+2. Run the script. The Tkinter window will appear with checkboxes for each course available.
 
-1. Clone this repository to your local machine.
+3. Select the courses you want to download and click "Done" to initiate the download process.
 
-2. Navigate to the project directory in your terminal.
+4. The script will automatically:
+   - Log into the website using Selenium.
+   - Navigate through the course list.
+   - Download the selected course files.
+   - Extract ZIP files and delete them after extraction.
 
-3. Run the `scraper.py` script. The script will launch a Tkinter window where you can input the necessary data, such as URLs and file paths.
+## How it Works
 
-4. The script will use Selenium to interact with the webpage and perform actions like downloading files or scraping data.
-
-5. If the script involves downloading files (e.g., zip files), it will automatically extract the contents for further processing.
-
-## How It Works
-
-- **Selenium WebDriver**: The script uses Selenium to control a web browser (Microsoft Edge). It navigates to specific URLs, interacts with elements (like buttons or input fields), and downloads files as necessary.
+- **Login and Course Selection**: The script uses Selenium to open the login page, fills in the credentials, and logs in. Once logged in, it fetches the list of courses and displays them in a Tkinter window with checkboxes.
   
-- **Tkinter GUI**: The Tkinter module provides a simple interface where users can input data required for the scraper to function, such as URLs, search keywords, or file paths.
+- **File Download and Extraction**: After the user selects the courses to download and clicks "Done", the script downloads the files and checks if any ZIP files need to be extracted. It extracts them and deletes the ZIP file after extraction.
 
-- **File Handling**: The script supports downloading and extracting files, especially zip files, and can process them for further usage.
+- **Download Completeness**: The script periodically checks for `.crdownload` files in the download folder to ensure the download has finished before moving to the next action.
 
-- **Automation**: The script waits for web elements to load before interacting with them and can be customized to handle different web pages, form submissions, or file downloads.
+- **Clean-up**: The script automatically closes the browser when the download and extraction process is completed.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the LICENSE file for more details.
