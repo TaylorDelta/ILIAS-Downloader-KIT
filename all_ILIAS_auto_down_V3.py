@@ -306,7 +306,7 @@ if __name__ == "__main__":
     USERNAME = "username"
     PASSWORD = "password"
     BASE_URL = "https://ilias.institution.com"
-    DOWNLOAD_FOLDER = "C:\\Users\\user\Documents\..."
+    DOWNLOAD_FOLDER = r"C:\Users\user\Documents\..."
 
     # Initialize WebDriver
     print('Setting up the webdriver...')
