@@ -16,7 +16,6 @@ Please note that the script is still under development and may encounter issues 
 - Python 3.x
 - Selenium (`pip install selenium`)
 - Microsoft Edge WebDriver
-- A web portal with downloadable course materials
 
 ## Setup Instructions
 
