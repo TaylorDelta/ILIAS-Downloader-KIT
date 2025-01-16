@@ -318,8 +318,8 @@ if __name__ == "__main__":
     # Define credentials and URLs
     USERNAME = "username"
     PASSWORD = "password"
-    BASE_URL = "https://ilias.institution.com"
-    DOWNLOAD_FOLDER = "C:\\Users\\user\Documents\..."
+    BASE_URL = "https://ilias.istitution.com"
+    DOWNLOAD_FOLDER = r"C:\Users\user\Documents\..."
 
     # Initialize WebDriver
     print('Setting up the webdriver...')
