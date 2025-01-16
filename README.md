@@ -4,8 +4,8 @@ This Python script automates the process of logging into ILIAS, downloading cour
 
 ## Versions Available
 
-1. **all_ILIAS_auto_down**: Downloads all course materials with a single click.
-2. **selected_ILIAS_auto_down**: Allows you to choose which courses to download.
+1. **all_ILIAS_down**: Downloads all course materials with a single click.
+2. **selected_ILIAS_down**: Allows you to choose which courses to download.
 
 ## Note
 
@@ -47,7 +47,7 @@ Update the following placeholders in the script with your actual values:
 Execute the script with Python:
 
 ```bash
-python download_course_materials.py
+python all_ILIAS_down.py
 ```
 
 ## Script Overview
