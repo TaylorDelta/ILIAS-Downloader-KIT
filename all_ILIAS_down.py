@@ -25,7 +25,7 @@ def setup_webdriver(download_folder):
     """
     options = Options()
 
-    options.add_argument(f"user-data-dir={user_data_dir}") # To later delet cache
+    options.add_argument(f"user-data-dir={user_data_dir}") # To later delete cache
     options.add_argument("--headless")  # Run browser in headless mode
     options.add_argument("--disable-gpu")  # Optional: Disable GPU
     #options.add_argument("--window-size=1920,1080")  # Optional: Set the window size
