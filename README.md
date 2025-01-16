@@ -39,7 +39,7 @@ Update the following placeholders in the script with your actual values:
 
 - `USERNAME`: Your portal username.
 - `PASSWORD`: Your portal password.
-- `BASE_URL`: The base URL of your portal (e.g., "https://ilias.institution.com").
+- `BASE_URL`: The base URL of your portal (e.g., "https://ilias.studium.kit.edu").
 - `DOWNLOAD_FOLDER`: The folder where the downloaded files will be stored (e.g., "C:\Users\user\Documents\Downloads").
 
 ### 4. Run the Script
