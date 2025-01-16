@@ -25,6 +25,7 @@ def setup_webdriver(download_folder):
     """
     options = Options()
 
+    options.add_argument(f"user-data-dir={user_data_dir}") # To later delet cache
     options.add_argument("--headless")  # Run browser in headless mode
     options.add_argument("--disable-gpu")  # Optional: Disable GPU
     #options.add_argument("--window-size=1920,1080")  # Optional: Set the window size
@@ -323,7 +324,10 @@ if __name__ == "__main__":
 
     # Initialize WebDriver
     print('Setting up the webdriver...')
-    driver = setup_webdriver(DOWNLOAD_FOLDER)
+    user_data_dir = os.path.join(DOWNLOAD_FOLDER, 'UserData')
+    os.makedirs(user_data_dir, exist_ok=True)
+    driver = setup_webdriver(DOWNLOAD_FOLDER, user_data_dir)
+
 
     try:
         # Log in to the portal
@@ -361,4 +365,7 @@ if __name__ == "__main__":
         # Close the WebDriver
         print('Done, closing webdriver...')
         driver.quit()
+        # Remove the user data directory
+        if os.path.exists(user_data_dir):
+            shutil.rmtree(user_data_dir)
 
