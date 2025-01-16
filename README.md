@@ -1,6 +1,6 @@
 # ILIAS Course Downloader
 
-This Python script automates the process of logging into ILIAS, downloading course materials, and extracting ZIP files. It leverages the `Selenium` library for browser automation, enabling the bulk download of multiple course materials at once. The script is designed to work with Microsoft Edge and currently supports Windows only.
+This Python script automates the process of logging into ILIAS, downloading course materials, and extracting ZIP files. It leverages the `Selenium` library for browser automation, enabling the bulk download of multiple course materials at once. The script is designed to work with Microsoft Edge and currently supports therfore Windows only.
 
 ## Versions Available
 
