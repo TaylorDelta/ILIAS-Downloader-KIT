@@ -19,7 +19,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-def setup_webdriver(download_folder):
+def setup_webdriver(download_folder, user_data_dir):
     """
     Configure and initialize the Edge WebDriver with the necessary options.
     """
