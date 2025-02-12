@@ -52,8 +52,8 @@ python all_ILIAS_down.py
 
 ## Script Overview
 
-### `setup_webdriver(download_folder)`
-Configures the Edge WebDriver to run in headless mode and sets up the download folder.
+### `setup_webdriver(download_folder, user_data_dir)`
+Configures the Edge WebDriver to run in headless mode and sets up the download and cache folder.
 
 ### `login_to_portal(driver, url, username, password)`
 Logs into the portal using provided credentials.
